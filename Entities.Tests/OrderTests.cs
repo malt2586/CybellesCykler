@@ -7,9 +7,10 @@ namespace Entities.Tests
     public class OrderTests
     {
         [TestMethod]
-        public void ConstructorsTest()
+        public void ConstructorTest()
         {
             // ARRANGE
+
 
             // ACT
             // ASSERT

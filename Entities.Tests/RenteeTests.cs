@@ -22,7 +22,7 @@ namespace Entities.Tests
             string actualAddress = rentee.Address;
             string actualPhoneNumber = rentee.PhoneNumber;
             DateTime actualRegisterDate = rentee.RegisterDate;
-            int actualID = rentee.Id;
+            int actualId = rentee.Id;
 
             // ASSERT
             Assert.IsNotNull(rentee, "Rentee is null");
@@ -30,6 +30,7 @@ namespace Entities.Tests
             Assert.AreEqual(address, actualAddress, "Address not equal");
             Assert.AreEqual(phoneNumber, actualPhoneNumber, "PhoneNumber not equal");
             Assert.AreEqual(registerDate, actualRegisterDate, "RegisterDate not equal");
+            Assert.AreEqual(id, actualId, "Id not equal");
         }
 
         [TestMethod]
@@ -42,7 +43,7 @@ namespace Entities.Tests
             DateTime registerDate = new DateTime();
             int id = 1;
             Rentee rentee = new Rentee(name, address, phoneNumber, registerDate, id);
-            string expected = $"Navn: {name}, Adresse: {address}, Tlf: {phoneNumber}, Registreret: {registerDate.Date}; ID: {id}";
+            string expected = $"Name: {name}, Address: {address}, Phone: {phoneNumber}, Registrered: {registerDate.Date}; ID: {id}";
 
             // ACT
             string actual = rentee.ToString();

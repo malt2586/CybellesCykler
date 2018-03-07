@@ -2,7 +2,7 @@
 
 namespace Entities
 {
-    public class Rentee
+    public class Rentee : IPersistable
     {
         // FIELDS
         private string name;
@@ -31,7 +31,7 @@ namespace Entities
         // METHODS
         public override string ToString()
         {
-            return $"Navn: {Name}, Adresse: {Address}, Tlf: {PhoneNumber}, Registreret: {RegisterDate.Date}; ID: {Id}";
+            return $"Name: {Name}, Address: {Address}, Phone: {PhoneNumber}, Registrered: {RegisterDate.Date}; ID: {Id}";
         }
     }
 }
