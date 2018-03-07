@@ -43,13 +43,14 @@ namespace Entities.Tests
             DateTime registerDate = new DateTime();
             int id = 1;
             Rentee rentee = new Rentee(name, address, phoneNumber, registerDate, id);
+
             string expected = $"Name: {name}, Address: {address}, Phone: {phoneNumber}, Registrered: {registerDate.Date}; ID: {id}";
 
             // ACT
             string actual = rentee.ToString();
 
             // ASSERT
-            Assert.AreEqual(expected, actual, "ToString not equal");
+            Assert.AreEqual(expected, actual, "String not equal");
         }
     }
 }
