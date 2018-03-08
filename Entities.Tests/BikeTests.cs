@@ -29,5 +29,24 @@ namespace Entities.Tests
             Assert.AreEqual(kind, actualKind, "Kind not equal");
             Assert.AreEqual(id, actualId, "Id not equal");
         }
+
+        [TestMethod]
+        public void ToStringTest()
+        {
+            // ARRANGE
+            decimal pricePerDay = 20.5M;
+            string bikeDescription = "Some description of the bike";
+            BikeKind kind = BikeKind.Mountain;
+            int id = 1;
+            Bike bike = new Bike(pricePerDay, bikeDescription, kind, id);
+
+            string expected = $"Kind: {kind}, Description: {bikeDescription}, Price: {pricePerDay}, ID: {id}";
+
+            // ACT
+            string actual = bike.ToString();
+
+            // ASSERT
+            Assert.AreEqual(expected, actual, "String not equal");
+        }
     }
 }

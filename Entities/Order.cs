@@ -18,7 +18,6 @@ namespace Entities
         public DateTime DeliveryDate { get => deliveryDate; set => deliveryDate = value; }
         public int Id { get => id; set => id = value; }
 
-
         // CONSTRUCTORS
         /// <summary>
         /// 
@@ -39,7 +38,7 @@ namespace Entities
 
         // METHODS
         /// <summary>
-        /// Returns price as decimal based on number of days from order date to delivery date. (deliveryDate = end of rent period OR start of rent period ??)
+        /// Returns price as decimal based on number of days from order date to delivery date
         /// </summary>
         /// <returns></returns>
         public decimal GetPrice()

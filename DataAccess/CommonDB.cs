@@ -15,7 +15,7 @@ namespace DataAccess
         }
 
         // METHODS
-        protected DataSet ExecuteQuery(string query, QueryType qT = QueryType.Query)
+        protected DataSet ExecuteQuery(string query, QueryType qT = QueryType.Query, int id = 0)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -23,11 +23,25 @@ namespace DataAccess
                 {
                     using (SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd))
                     {
-                        DataSet ds = new DataSet();
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        dataAdapter.Fill(ds);
-                        return ds;
+                        if (qT == QueryType.StoredProcedure)
+                        {
+                            DataSet ds = new DataSet();
+                            con.Open();
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
+                            cmd.ExecuteNonQuery();
+                            dataAdapter.Fill(ds);
+                            return ds;
+                        }
+                        else
+                        {
+                            DataSet ds = new DataSet();
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                            dataAdapter.Fill(ds);
+                            return ds;
+                        }
+
                     }
                 }
             }

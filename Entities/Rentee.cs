@@ -31,7 +31,7 @@ namespace Entities
         // METHODS
         public override string ToString()
         {
-            return $"Name: {Name}, Address: {Address}, Phone: {PhoneNumber}, Registrered: {RegisterDate.Date}; ID: {Id}";
+            return $"Name: {Name}, Address: {Address}, Phone: {PhoneNumber}, Registered: {RegisterDate}, ID: {Id}";
         }
     }
 }

@@ -44,7 +44,7 @@ namespace Entities.Tests
             int id = 1;
             Rentee rentee = new Rentee(name, address, phoneNumber, registerDate, id);
 
-            string expected = $"Name: {name}, Address: {address}, Phone: {phoneNumber}, Registrered: {registerDate.Date}; ID: {id}";
+            string expected = $"Name: {name}, Address: {address}, Phone: {phoneNumber}, Registered: {registerDate.Date}, ID: {id}";
 
             // ACT
             string actual = rentee.ToString();

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public enum BikeKind
+    public enum BikeKind : byte
     {
-        Mountain = 1 << 0,
-        City = 1 << 1,
-        Tandem = 1 << 2,
-        Unicycle = 1 << 3,
-        PennyFarthing = 1 << 4,
-        PediCab = 1 << 5
+        Mountain = 1,
+        City = 2,
+        Tandem = 3,
+        Unicycle = 4,
+        PennyFarthing = 5,
+        PediCab = 6
     }
 }

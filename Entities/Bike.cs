@@ -22,5 +22,11 @@
             Kind = kind;
             Id = id;
         }
+
+        // METHODS
+        public override string ToString()
+        {
+            return $"Kind: {Kind}, Description: {BikeDescription}, Price: {PricePerDay}, ID: {Id}";
+        }
     }
 }

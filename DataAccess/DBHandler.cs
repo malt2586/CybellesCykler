@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using Entities;
 
 namespace DataAccess
@@ -9,19 +10,40 @@ namespace DataAccess
         public DBHandler(string connectionString) : base(connectionString) { }
 
         // METHODS
-        public Rentee GetRentee(int v)
+        public Rentee GetRentee(int id)
         {
-            throw new NotImplementedException();
+            DataSet ds = ExecuteQuery("GetRentee", QueryType.StoredProcedure, id);
+            Rentee rentee = new Rentee
+            (
+                ds.Tables[0].Rows[0].Field<string>("Name"),
+                ds.Tables[0].Rows[0].Field<string>("PhysAddress"),
+                ds.Tables[0].Rows[0].Field<string>("PhoneNumber"),
+                ds.Tables[0].Rows[0].Field<DateTime>("RegisterDate"),
+                ds.Tables[0].Rows[0].Field<int>("ID")
+            );
+            return rentee;
         }
 
-        public Bike GetBike(int v)
+        public Bike GetBike(int id)
         {
-            throw new NotImplementedException();
+            DataSet ds = ExecuteQuery("GetBike", QueryType.StoredProcedure, id);
+            Bike bike = new Bike
+            (
+                ds.Tables[0].Rows[0].Field<decimal>("PricePerDay"),
+                ds.Tables[0].Rows[0].Field<string>("BikeDescription"),
+                (BikeKind)id,
+                id
+            );
+            return bike;
         }
 
-        public Order GetOrder(int v)
+        public Order GetOrder(int id)
         {
-            throw new NotImplementedException();
+            DataSet ds = ExecuteQuery("GetOrder", QueryType.StoredProcedure, id);
+            Order order = new Order
+            (
+                ds.Tables[0].Rows[0].Field<>
+            )
         }
 
         public bool NewRentee(Rentee expected)
