@@ -25,23 +25,14 @@ namespace DataAccess
                     {
                         if (qT == QueryType.StoredProcedure)
                         {
-                            DataSet ds = new DataSet();
-                            con.Open();
                             cmd.CommandType = CommandType.StoredProcedure;
                             cmd.Parameters.Add("@ID", SqlDbType.Int).Value = id;
-                            cmd.ExecuteNonQuery();
-                            dataAdapter.Fill(ds);
-                            return ds;
                         }
-                        else
-                        {
-                            DataSet ds = new DataSet();
-                            con.Open();
-                            cmd.ExecuteNonQuery();
-                            dataAdapter.Fill(ds);
-                            return ds;
-                        }
-
+                        DataSet ds = new DataSet();
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        dataAdapter.Fill(ds);
+                        return ds;
                     }
                 }
             }

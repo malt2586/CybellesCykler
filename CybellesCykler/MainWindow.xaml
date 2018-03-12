@@ -13,7 +13,9 @@
         <Button Content="Add" HorizontalAlignment="Left" Margin="444,37,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="444,60,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Edit" HorizontalAlignment="Left" Margin="444,84,0,0" VerticalAlignment="Top" Width="75"/>
-        <DataGrid x:Name="DtgSelected" HorizontalAlignment="Left" Height="277" Margin="10,34,0,0" VerticalAlignment="Top" Width="429"/>
+        <DataGrid x:Name="DtgSelected" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="277" Margin="10,34,0,0" VerticalAlignment="Top" Width="429" AutoGenerateColumns="True">
+            
+        </DataGrid>
 
     </Grid>
 </Window>
